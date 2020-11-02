@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Curriculo;
+use App\Models\Curriculo;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
@@ -25,7 +25,7 @@ class CurriculoController extends Controller
     {
         return view('newCurriculo');
     }
-    public function storeCurriculo(Request $request)
+    public function store(Request $request)
     {
         $curriculo = new Curriculo();
         $curriculo->photo = $request->photo;

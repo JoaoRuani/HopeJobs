@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreteCurriculosTable extends Migration
+class CreateCurriculosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,15 @@ class CreteCurriculosTable extends Migration
     public function up()
     {
         Schema::create('curriculos', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->text('Photo');
-            $table->string('name');
-            $table->string('status');
-            $table->string('gender');
-            $table->string('naturalness');
-            $table->date('birth');
+            $table->id();
+            $table->string('nome');
+            $table->string('sobrenome');
+            $table->string('foto');
+            $table->string('estado_civil');
+            $table->string('genero');
+            $table->date('data_nascimento');
+            $table->string('naturalidade');
+            $table->foreignId('endereco_id')->constrained();
             $table->timestamps();
 
         });
@@ -33,6 +35,6 @@ class CreteCurriculosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('curriculos');
     }
 }

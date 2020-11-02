@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreteEnderecosTable extends Migration
+class CreateTelefonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreteEnderecosTable extends Migration
      */
     public function up()
     {
-        Schema::create('enderecos', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->string('cep');
-            $table->string('number');
-            $table->string('rua');
-            $table->string('city');
-            $table->string('state');
+        Schema::create('telefones', function (Blueprint $table){
+            $table->id();
+            $table->string('numero');
+            $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreteEnderecosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('telefones');
     }
 }
