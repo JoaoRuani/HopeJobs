@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreteIdiomasTable extends Migration
+class CreateIdiomasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,11 @@ class CreteIdiomasTable extends Migration
     public function up()
     {
         Schema::create('idiomas', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->string('language');
-            $table->string('lvl');
+            $table->id();
+            $table->string('idioma');
+            $table->string('nivel');
+            $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +29,6 @@ class CreteIdiomasTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('idiomas');
     }
 }

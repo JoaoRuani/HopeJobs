@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreteTelefonesTable extends Migration
+class CreateDeficienciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreteTelefonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('telefones', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->string('number');
-            
+        Schema::create('deficiencias', function (Blueprint $table){
+            $table->id();
+            $table->string('tipo');
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +27,6 @@ class CreteTelefonesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('deficiencias');
     }
 }
