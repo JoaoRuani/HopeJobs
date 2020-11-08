@@ -20,8 +20,9 @@ Route::get('/', function () {
 
 
 
-Route::name('curriculos.')->group(function() {
-    Route::get('/curriculo', 'CurriculoController@index')->name('index');
+Route::middleware('auth')->name('curriculos.')->group(function() {
+    Route::get('/curriculo', 'CurriculoController@create')->name('create');
+    Route::post('/curriculo/store', 'CurriculoController@store')->name('store');
 });
 
 //Curriculos
