@@ -19,27 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1235d707-9715-4181-b084-9053fa4393e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/viacep.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurriculoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurriculoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Curriculo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Curriculo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Endereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Endereco.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Formacao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Formacao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_160223_create_curriculos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_160223_create_curriculos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_160358_create_telefones_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_160358_create_telefones_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_160414_create_experiencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_160414_create_experiencias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_160427_create_enderecos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_160427_create_enderecos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_160440_create_formacoes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_160440_create_formacoes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_19_160456_create_deficiencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_19_160456_create_deficiencias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/curriculo/form_curriculo.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/curriculo/select_paises.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="1235d707-9715-4181-b084-9053fa4393e7" name="Default Changelist" comment="Tela de cadastro do currículo e correções" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,8 +178,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605945824409</updated>
-      <workItem from="1605945826287" duration="25610000" />
+      <workItem from="1605945826287" duration="25965000" />
     </task>
+    <task id="LOCAL-00001" summary="Tela de cadastro do currículo e correções">
+      <created>1605997508381</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605997508381</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,11 +204,19 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tela de cadastro do currículo e correções" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tela de cadastro do currículo e correções" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="184" y="29" key="SettingsEditor" timestamp="1605974166452">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1605974166452" />
+    <state x="500" y="298" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605997530889">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="500" y="298" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1605997530889" />
     <state x="267" y="0" width="1011" height="602" key="dock-window-1" timestamp="1605987299309">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
