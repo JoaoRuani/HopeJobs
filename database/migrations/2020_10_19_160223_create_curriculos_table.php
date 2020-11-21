@@ -21,10 +21,9 @@ class CreateCurriculosTable extends Migration
             $table->string('estado_civil');
             $table->string('genero');
             $table->date('data_nascimento');
-            $table->string('naturalidade');
-            $table->foreignId('endereco_id')->constrained();
+            $table->string('nacionalidade');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
-
         });
     }
 

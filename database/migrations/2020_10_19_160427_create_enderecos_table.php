@@ -21,6 +21,7 @@ class CreateEnderecosTable extends Migration
             $table->string('cidade');
             $table->string('estado');
             $table->string('bairro')->nullable();
+            $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
         });
     }

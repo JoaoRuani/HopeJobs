@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Curriculo;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CurriculoController extends Controller
 {
@@ -15,9 +16,23 @@ class CurriculoController extends Controller
         return redirect()->route('');
     }
 
+    public function index()
+    {
+        $curriculo = Auth::user()->curriculo;
+        if(empty($curriculo))
+        {
+            return redirect()->route('curriculo.create');
+        }
+        return view('curriculo.index', ['curriculo' => $curriculo, 'user' => Auth::user()]);
+    }
     public function create()
     {
-        return view('curriculo.form_curriculo');
+        $curriculo = Auth::user()->curriculo;
+        if(!empty($curriculo))
+        {
+            return redirect()->route('curriculo.index');
+        }
+        return view('curriculo.create');
     }
 }
 

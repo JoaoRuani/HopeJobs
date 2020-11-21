@@ -16,6 +16,7 @@ class CreateDeficienciasTable extends Migration
         Schema::create('deficiencias', function (Blueprint $table){
             $table->id();
             $table->string('tipo');
+            $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
         });
     }

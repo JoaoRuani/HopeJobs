@@ -17,7 +17,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
-<body data-spy="scroll" data-target="#scrollspy_curriculo" data-offset="50">
+<body data-spy="scroll" data-target="#scrollspy_curriculo" data-offset="100">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

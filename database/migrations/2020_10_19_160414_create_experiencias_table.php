@@ -16,9 +16,9 @@ class CreateExperienciasTable extends Migration
         Schema::create('experiencias', function (Blueprint $table){
             $table->id();
             $table->text('descricao');
-            $table->string('cargo'); 
+            $table->string('cargo');
             $table->string('empresa');
-            $table->string('nivel'); // Estagiário, CLT, PJ...
+            $table->string('nivel'); // Estagiário, Junior, Especialista ..
             $table->string('area')->nullable(); // RH, TI...
             $table->date('inicio');
             $table->date('saida')->nullable();

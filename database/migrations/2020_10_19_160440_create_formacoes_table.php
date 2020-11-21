@@ -17,12 +17,12 @@ class CreateFormacoesTable extends Migration
             $table->id();
             $table->string('nivel'); // graduação, técnico, mestrado ...
             $table->string('instituicao');
-            $table->string('turno');
+            $table->string('turno')->nullable();
             $table->string('curso');
-            $table->string('campus');
-            $table->boolean('cursando'); // cursando ou não
+            $table->string('campus')->nullable();
+            $table->string('status'); // cursando / trancado/ concluído
             $table->date('inicio');
-            $table->date('fim');
+            $table->date('previsao_fim');
             $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
         });
