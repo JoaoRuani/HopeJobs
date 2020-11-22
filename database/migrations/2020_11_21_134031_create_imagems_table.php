@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDeficienciasTable extends Migration
+class CreateImagemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateDeficienciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('deficiencias', function (Blueprint $table){
+        Schema::create('imagems', function (Blueprint $table) {
             $table->id();
-            $table->boolean('val');
-            $table->string('tipo');
-            $table->foreignId('curriculo_id')->constrained();
+            $table->string('url');
+            $table->integer('imageable_id');
+            $table->string('imageable_type');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateDeficienciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deficiencias');
+        Schema::dropIfExists('imagems');
     }
 }

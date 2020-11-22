@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Curriculo extends Model
 {
-    protected $guarded = ['id', 'endereco_id'];
+    protected $guarded = ['id'];
 
     /**
      * Relacionamento com o endereço
@@ -52,6 +53,14 @@ class Curriculo extends Model
         return $this->hasMany(Telefone::class);
     }
     /**
+     * Relacionamento com deficiencias
+     * @return HasMany
+     */
+    public function deficiencias()
+    {
+        return $this->hasMany(Deficiencia::class);
+    }
+    /**
      * Relacionamento inverso com o usuário
      * @return BelongsTo
      */
@@ -59,4 +68,18 @@ class Curriculo extends Model
     {
         return $this->belongsTo(User::class);
     }
+    /**
+     * Nome completo nome+sobrenome
+     * @return string
+     */
+    public function nomeCompleto()
+    {
+        return "{$this->nome} {$this->sobrenome}";
+    }
+
+    public function foto()
+    {
+        return $this->morphOne(Imagem::class, 'imageable');
+    }
+
 }

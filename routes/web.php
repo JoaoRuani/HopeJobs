@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CurriculoController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +23,10 @@ Route::get('/', function () {
 
 
 
-Route::middleware('auth')->name('curriculos.')->group(function() {
-    Route::get('/curriculo', 'CurriculoController@create')->name('create');
-    Route::post('/curriculo/store', 'CurriculoController@store')->name('store');
+Route::middleware('auth')->name('curriculo.')->group(function() {
+    Route::get('/curriculo', [CurriculoController::class, 'index'])->name('index');
+    Route::get('/curriculo/create', [CurriculoController::class, 'create'])->name('create');
+    Route::post('/curriculo/store', [CurriculoController::class, 'store'])->name('store');
 });
 
 //Curriculos
@@ -34,7 +38,9 @@ Route::put('curriculos/edit/{user}', 'CurriculoController@edit')->name('curricul
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
 Route::get('/admin', 'AuthController@dashboard')->name('admin');
 Route::get('/admin/login', 'AuthController@LoginForm')->name('admin.login');
 Route::get('/admin/login/do', 'AuthController@Login')->name('admin.login.do');
