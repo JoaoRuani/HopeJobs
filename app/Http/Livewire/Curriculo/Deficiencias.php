@@ -10,38 +10,38 @@ use Livewire\Component;
 
 class Deficiencias extends Component
 {
-
-    public $deficiencias = [];
+    public $deficienciasSelecionadas = [];
     public string $possuiDeficiencia = 'false';
-    public function rules()
-    {
-        return [
-            'deficiencias.*.tipo' => ['required', Rule::in(TiposDeficiencia::getValues())]
-        ];
-    }
+
     public function mount()
     {
         $user = Auth::user();
         if(!empty($curriculo = $user->curriculo) and ($deficiencias = $curriculo->deficiencias)->count())
         {
             $this->possuiDeficiencia = 'true';
-            $this->deficiencias = $deficiencias;
+            foreach ($deficiencias as $deficiencia)
+            {
+                $this->deficienciasSelecionadas[] = $deficiencia->tipo;
+            }
         }
     }
     public function render()
     {
         return view('livewire.curriculo.deficiencias');
     }
-    public function updatedDeficiencias()
+    public function updatedDeficienciasSelecionadas()
     {
-        $this->validate();
         /**
          * @var Curriculo $curriculo
          */
         $curriculo = Auth::user()->curriculo;
         if(!empty($curriculo))
         {
-            $curriculo->deficiencias()->createMany($this->deficiencias);
+            $curriculo->deficiencias()->delete();
+            foreach ($this->deficienciasSelecionadas as $deficiencia)
+            {
+                $curriculo->deficiencias()->create(['tipo' => $deficiencia]);
+            }
         }
     }
     public function updatedPossuiDeficiencia()
@@ -55,6 +55,7 @@ class Deficiencias extends Component
             if(!empty($curriculo))
             {
                 $curriculo->deficiencias()->delete();
+                $this->deficiencias = [];
             }
         }
 

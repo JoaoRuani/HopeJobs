@@ -85,47 +85,11 @@
                     <div class="form-group col-12">
                         <hr>
                     </div>
-                        <livewire:curriculo.deficiencias/>
+                        <livewire:curriculo.deficiencias />
                     <div class="form-group col-12">
                         <hr>
                     </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label for="cep">
-                            <span>*</span> CEP</label>
-                        <input type="text" id="cep" name="cep" class="form-control">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label for="logradouro">
-                            <span>*</span> Rua</label>
-                        <input type="text" id="logradouro" name="logradouro" class="form-control">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="numero">
-                            <span>*</span> Número
-                        </label>
-                        <input type="text" id="numero" name="numero" class="form-control">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="complemento">Complemento</label>
-                        <input type="text" id="complemento" name="complemento" class="form-control">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="bairro"><span
-                            >*</span> Bairro
-                        </label>
-                        <input type="text" id="bairro" name="bairro" class="form-control">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label for="uf">
-                            <span>*</span> Estado
-                        </label>
-                        <input type="text" id="uf" name="uf" class="form-control">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label for="cidade">
-                            <span>*</span> Cidade</label>
-                        <input type="text" name="cidade" id="cidade" class="form-control" >
-                    </div>
+                        <livewire:curriculo.endereco />
                 </div>
                 <p class="small text-right font-italic">Campos com * são
                     obrigatórios.</p>

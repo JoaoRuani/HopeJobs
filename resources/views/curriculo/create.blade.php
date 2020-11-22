@@ -213,7 +213,7 @@
 @endsection
 @section('javascripts')
     <script src="{{ asset('js/vendor/select2.min.js') }}"></script>
-    <script src="{{ asset('js/viacep.js') }}"></script>
+{{--    <script src="{{ asset('js/viacep.js') }}"></script>--}}
     <script>
         $(document).ready(function() {
             $('.select2').select2({
