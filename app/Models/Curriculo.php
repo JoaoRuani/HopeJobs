@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Enums\Curriculo\CurriculoStatus;
+use App\Enums\Curriculo\EstadosCivis;
+use BenSampo\Enum\Traits\CastsEnums;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,8 +13,13 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Curriculo extends Model
 {
+    use CastsEnums;
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'status' => CurriculoStatus::class,
+        'estado_civil' => EstadosCivis::class
+    ];
     /**
      * Relacionamento com o endereço
      * @return HasOne
@@ -46,11 +54,11 @@ class Curriculo extends Model
     }
     /**
      * Relacionamento com o telefone
-     * @return HasMany
+     * @return HasOne
      */
-    public function telefones()
+    public function telefone()
     {
-        return $this->hasMany(Telefone::class);
+        return $this->hasOne(Telefone::class);
     }
     /**
      * Relacionamento com deficiencias

@@ -17,12 +17,11 @@ class CreateCurriculosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('foto');
-            $table->string('estado_civil');
+            $table->integer('estado_civil');
             $table->string('genero');
             $table->date('data_nascimento');
             $table->string('nacionalidade');
-            $table->string('status'); //em construção, finalizado
+            $table->integer('status'); //em construção, finalizado
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

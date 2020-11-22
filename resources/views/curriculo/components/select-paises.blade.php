@@ -1,7 +1,6 @@
 <div {{ $attributes->merge(['class' => 'form-group'])}}>
     <label for="nacionalidade">Nacionalidade</label>
-    <select class="form-control select2" name="nacionalidade" id="nacionalidade">
-        <option value="Brasil" selected="selected">Brasil</option>
+    <select class="form-control select2" wire:model="curriculo.nacionalidade" id="nacionalidade">
         <option value="Afeganistão">Afeganistão</option>
         <option value="África do Sul">África do Sul</option>
         <option value="Albânia">Albânia</option>
@@ -30,6 +29,7 @@
         <option value="Bielorrússia">Bielorrússia</option>
         <option value="Bolívia">Bolívia</option>
         <option value="Botswana">Botswana</option>
+        <option value="Brasil">Brasil</option>
         <option value="Brunei">Brunei</option>
         <option value="Bulgária">Bulgária</option>
         <option value="Burkina Faso">Burkina Faso</option>

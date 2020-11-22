@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Curriculo\CurriculoStatus;
 use Illuminate\Http\Request;
 use App\Models\Curriculo;
-use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class CurriculoController extends Controller
@@ -19,7 +18,7 @@ class CurriculoController extends Controller
     public function index()
     {
         $curriculo = Auth::user()->curriculo;
-        if(empty($curriculo))
+        if(empty($curriculo) || $curriculo->status->is(CurriculoStatus::Construcao))
         {
             return redirect()->route('curriculo.create');
         }
@@ -28,7 +27,7 @@ class CurriculoController extends Controller
     public function create()
     {
         $curriculo = Auth::user()->curriculo;
-        if(!empty($curriculo))
+        if(!empty($curriculo) && $curriculo->status->is(CurriculoStatus::Completo))
         {
             return redirect()->route('curriculo.index');
         }
