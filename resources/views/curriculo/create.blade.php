@@ -34,15 +34,13 @@
                                     <div>
                                         <div class="form-area">
                                             <form novalidate="novalidate">
-                                                <!---->
                                                 <div class="form-row">
-                                                    <!---->
                                                     <div
                                                         class="form-group col-12 col-sm-6 col-md-3 firstname-container">
-                                                        <label for="personal-input-first-name1025"><span
-                                                            >*</span> Nome</label><input
-                                                            type="text"
-                                                            id="personal-input-first-name1025" class="form-control">
+                                                        <label for="name">
+                                                            <span>*</span> Nome
+                                                        </label>
+                                                        <input type="text" id="name" class="form-control">
                                                     </div>
                                                     <div
                                                         class="form-group col-12 col-sm-6 col-md-3 lastname-container">
