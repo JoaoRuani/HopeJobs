@@ -117,6 +117,10 @@ return [
     |
     */
 
-    'atributos' => [],
+    'attributes' => [
+        'formacoes.*.instituicao' => 'Instituição',
+        'formacoes.*.curso' => 'Curso',
+        'formacoes.*.inicio' => 'Início',
+    ],
 
 ];

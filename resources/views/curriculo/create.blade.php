@@ -24,61 +24,7 @@
                             <div>
                                 <livewire:curriculo.dados-basicos/>
                                 <div class="py-4"></div>
-                                <div id="box-education">
-                                    <div class="form-row">
-                                        <div class="col-12 d-flex align-items-center flex-wrap mb-3 flex-column flex-sm-row text-center">
-                                            <h5 class="text-blue-ml">* FORMAÇÕES</h5>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-area mb-5">
-                                            <form novalidate="novalidate">
-                                                <div class="form-row">
-                                                    <x-select-nivel-formacao class="col-12 col-md-4"/>
-                                                    <div class="form-group col-12 col-md-4">
-                                                        <label for="instituicao">
-                                                            <span>*</span> Instituição
-                                                        </label>
-                                                        <input type="text" id="instituicao" name="instituicao" class="form-control" >
-                                                    </div>
-                                                    <div class="form-group col-12 col-md-4">
-                                                        <label for="curso">
-                                                            <span>*</span> Curso
-                                                        </label>
-                                                        <input id="curso" type="text" name="curso" class="form-control">
-                                                    </div>
-                                                    <x-select-status-formacao class="col-12 col-md-6"/>
-                                                    <div class="form-group col-12 col-md-6">
-                                                        <label for="campus">
-                                                            Campus
-                                                        </label>
-                                                        <input id="campus" type="text" name="campus" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-12 col-md-4">
-                                                        <label for="inicio">Início</label>
-                                                        <input type="text" id="inicio" name="inicio" placeholder="Exemplo: 01/2010" class="form-control">
-                                                    </div>
-                                                    <div class="form-group col-12 col-md-4">
-                                                        <label for="fim">
-                                                            <span>*</span> Previsão/Data de Conclusão
-                                                        </label>
-                                                        <input type="text" id="fim" name="fim" placeholder="Exemplo: 06/2012" class="form-control">
-                                                    </div>
-                                                    <x-select-periodo-formacao class="col-12 col-md-4"/>
-                                                </div>
-                                                <p class="small text-right font-italic">Campos com * são
-                                                    obrigatórios.</p>
-                                                <!---->
-                                            </form>
-                                            <!---->
-                                        </div>
-                                        <div class="d-flex">
-                                            <button class="btn btn-outline-primary mx-auto btn-lg">
-                                                Adicionar Formação
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <livewire:curriculo.formacoes/>
                                 <div class="py-4"></div>
                                 <div id="box-professional-experience">
                                     <div class="form-row">
@@ -233,6 +179,7 @@
             });
 
         });
-
+        $('.date-month').mask('00/0000');
+        $('.date').mask('00/00/0000');
     </script>
 @endsection

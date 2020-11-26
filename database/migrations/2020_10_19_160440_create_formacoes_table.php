@@ -22,7 +22,7 @@ class CreateFormacoesTable extends Migration
             $table->string('campus')->nullable();
             $table->string('status'); // cursando / trancado/ concluído
             $table->date('inicio');
-            $table->date('previsao_fim');
+            $table->date('previsao_fim')->nullable();
             $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
         });

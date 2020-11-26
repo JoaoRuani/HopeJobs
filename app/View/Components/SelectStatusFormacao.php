@@ -7,13 +7,18 @@ use Illuminate\View\Component;
 class SelectStatusFormacao extends Component
 {
     /**
+     * @var int
+     */
+    public $key;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($key)
     {
-        //
+        $this->key = $key;
     }
 
     /**
