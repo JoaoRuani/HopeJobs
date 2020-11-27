@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\Curriculo\CurriculoStatus;
 use App\Enums\Curriculo\EstadosCivis;
+use App\Enums\Curriculo\Generos;
 use BenSampo\Enum\Traits\CastsEnums;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -18,7 +19,8 @@ class Curriculo extends Model
 
     protected $casts = [
         'status' => CurriculoStatus::class,
-        'estado_civil' => EstadosCivis::class
+        'estado_civil' => EstadosCivis::class,
+        'genero' => Generos::class
     ];
     /**
      * Relacionamento com o endereço

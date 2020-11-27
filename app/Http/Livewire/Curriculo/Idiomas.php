@@ -43,7 +43,7 @@ class Idiomas extends Component
         $this->idiomas = new Collection();
         if(!empty($curriculo = $user->curriculo) and ($idiomas = $curriculo->idiomas)->count() > 0)
         {
-            $this->idiomas = new Collection($this->idiomas->toArray());
+            $this->idiomas = new Collection($idiomas->all());
         }
         else
         {

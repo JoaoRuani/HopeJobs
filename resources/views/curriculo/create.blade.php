@@ -29,15 +29,7 @@
                                 <livewire:curriculo.experiencias />
                                 <div class="py-4"></div>
                                 <livewire:curriculo.idiomas/>
-                                <div class="row mt-3 pt-5">
-                                    <div class="col-12 text-center">
-                                        <button type="button" class="btn btn-primary btn-lg">
-                                            <span>
-                                                Finalizar meu Currículo
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
+                                <livewire:curriculo.finalizar />
                             </div>
                         </div>
                     </div>
