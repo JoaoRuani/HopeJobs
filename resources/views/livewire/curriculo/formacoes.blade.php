@@ -72,13 +72,12 @@
                                 <span>*</span> Previsão/Data de Conclusão
                             </label>
                             <input type="month" id="fim" wire:key="formacao_{{$loop->index}}-fim" wire:model.lazy.debounce.2000ms="formacoes.{{$loop->index}}.previsao_fim"
-                                   class="form-control
-                                    @error("formacoes.{$loop->index}.previsao_fim")is-invalid @enderror">
-                                    @error("formacoes.{$loop->index}.previsao_fim")
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
+                                   class="form-control @error("formacoes.{$loop->index}.previsao_fim")is-invalid @enderror">
+                                @error("formacoes.{$loop->index}.previsao_fim")
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                         </div>
                     @endif
                     @if($formacao->status->is(\App\Enums\Curriculo\StatusFormacao::Cursando))
@@ -102,9 +101,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        Livewire.hook('message.received', (message, component) => {console.log(component)});
-    });
-</script>

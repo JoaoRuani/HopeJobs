@@ -121,6 +121,23 @@ return [
         'formacoes.*.instituicao' => 'Instituição',
         'formacoes.*.curso' => 'Curso',
         'formacoes.*.inicio' => 'Início',
+        'experiencias.*.descricao' => 'Descrição',
+        'experiencias.*.cargo' => 'Cargo',
+        'experiencias.*.empresa' => 'Empresa',
+        'experiencias.*.nivel' => 'Nível',
+        'experiencias.*.area' => 'Area',
+        'experiencias.*.inicio' => 'Data de Inicio',
+        'experiencias.*.saida' => 'Data de Saída'
     ],
+
+
+    'experiencias.*.descricao' => ['required'],
+    'experiencias.*.cargo' => ['required'],
+    'experiencias.*.empresa' => ['required'],
+    'experiencias.*.nivel' => ['required'],
+    'experiencias.*.area' => ['nullable'],
+    'experiencias.*.inicio' => ['required', 'date'],
+    'experiencias.*.saida' => ['nullable', 'date'],
+    'experiencias.*.cargo_atual' => ['nullable', 'bool']
 
 ];

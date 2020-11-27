@@ -2,7 +2,8 @@
     <label for="area">
         <span>*</span> Área
     </label>
-    <select id="area" class="form-control select2" name="area">
+    <select id="area" class="form-control select2 @error("formacoes.{$key}.nivel")is-invalid @enderror"
+            wire:key="experiencia_{{$key}}" wire:model.lazy="experiencias.{{$key}}.area" >
         <option value="administrativo">Administrativo</option>
         <option value="atendimento">Atendimento</option>
         <option value="comunicação">Comunicação</option>
