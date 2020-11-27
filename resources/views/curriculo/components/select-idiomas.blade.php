@@ -1,8 +1,9 @@
 <div {{ $attributes->merge(['class' => 'form-group'])}}">
-    <label for="idioma">
+    <label for="idioma-idiomas">
         <span>*</span> Idioma
     </label>
-    <select id="idioma" class="form-control select2" name="idioma">
+    <select id="idioma-idiomas" wire:key="idiomas_{{$key}}" wire:model="idiomas.{{$key}}.idioma"
+            class="form-control select2 @error("idiomas.{$key}.idioma")is-invalid @enderror">
         <option value="Alemão">Alemão</option>
         <option value="Bengali">Bengali</option>
         <option value="Birmanês">Birmanês</option>
@@ -44,4 +45,9 @@
         <option value="Árabe">Árabe</option>
         <option value="Árabe egípcio">Árabe egípcio</option>
     </select>
+    @error("idiomas.$key.idioma")
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
+    @enderror
 </div>

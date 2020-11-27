@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Curriculo;
 
+use App\Enums\Curriculo\NivelIdioma;
 use App\Enums\Curriculo\StatusFormacao;
 use App\Models\Curriculo;
 use App\Models\Formacao;
@@ -83,8 +84,8 @@ class Formacoes extends Component
     public function adicionarFormacao()
     {
         $formacao = [
-            'status' => StatusFormacao::Concluido,
-            'nivel' => 'Graduação',
+            'status' => NivelIdioma::Fluente,
+            'idioma' => 'Português',
             'turno' => 'Noturno'
         ];
         $this->formacoes->add($formacao);

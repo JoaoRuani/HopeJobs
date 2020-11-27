@@ -28,32 +28,7 @@
                                 <div class="py-4"></div>
                                 <livewire:curriculo.experiencias />
                                 <div class="py-4"></div>
-                                <div id="box-language">
-                                    <div class="form-row">
-                                        <div
-                                            class="col-12 d-flex align-items-center flex-wrap mb-3 flex-column flex-sm-row text-center">
-                                            <h5 class="text-blue-ml">IDIOMAS</h5>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-area mb-5">
-                                            <form novalidate="novalidate">
-                                                <div class="form-row">
-                                                    <x-select-idiomas class="col-12 col-md-6"/>
-                                                    <x-select-nivel-idiomas class="col-12 col-md-6"/>
-                                                </div>
-                                                <p class="small text-right font-italic">
-                                                    Campos com * são obrigatórios.
-                                                </p>
-                                            </form>
-                                        </div>
-                                        <div class="d-flex">
-                                            <button class="btn btn-outline-primary mx-auto btn-lg">
-                                                Adicionar Idioma
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <livewire:curriculo.idiomas/>
                                 <div class="row mt-3 pt-5">
                                     <div class="col-12 text-center">
                                         <button type="button" class="btn btn-primary btn-lg">
