@@ -64,21 +64,27 @@ class Endereco extends Component
     public function preencherFormulario()
     {
         $cep = $this->endereco->cep;
-        $response = Http::get('https://viacep.com.br/ws/'.$cep.'/json');
-        if($response->successful())
-        {
-            $enderecoResponse = $response->json();
-            $this->endereco->logradouro = $enderecoResponse['logradouro'];
-            $this->endereco->bairro = $enderecoResponse['bairro'];
-            $this->endereco->cidade = $enderecoResponse['localidade'];
-            $this->endereco->uf = $enderecoResponse['uf'];
-            if(empty($this->endereco->complemento))
+        try {
+            $response = Http::get('https://viacep.com.br/ws/'.$cep.'/json');
+            if($response->successful())
             {
-                $this->endereco->complemento =  $enderecoResponse['complemento'];
+                $enderecoResponse = $response->json();
+                $this->endereco->logradouro = $enderecoResponse['logradouro'];
+                $this->endereco->bairro = $enderecoResponse['bairro'];
+                $this->endereco->cidade = $enderecoResponse['localidade'];
+                $this->endereco->uf = $enderecoResponse['uf'];
+                if(empty($this->endereco->complemento))
+                {
+                    $this->endereco->complemento =  $enderecoResponse['complemento'];
+                }
             }
+            $this->clearValidation();
+            $this->updated();
         }
-        $this->clearValidation();
-        $this->updated();
+        catch (\Exception $exception)
+        {
+            $this->clearValidation();
+        }
     }
 
 }
