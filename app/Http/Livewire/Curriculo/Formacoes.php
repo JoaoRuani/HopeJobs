@@ -84,8 +84,8 @@ class Formacoes extends Component
     public function adicionarFormacao()
     {
         $formacao = [
-            'status' => NivelIdioma::Fluente,
-            'idioma' => 'Português',
+            'status' => StatusFormacao::Concluido,
+            'nivel' => 'Graduação',
             'turno' => 'Noturno'
         ];
         $this->formacoes->add($formacao);

@@ -1,67 +1,6 @@
 <div class="sidebar-menu shadow rounded-xl">
     <div>
-        <div class="input-avatar mb-4">
-            <label for="">
-                <span aria-label="Plus Circle icon" role="img"
-                    class="material-design-icon plus-circle-icon">
-                    <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24"
-                        class="material-design-icon__svg">
-                        <path
-                            d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2Z">
-                            <title>Plus Circle icon</title>
-                        </path>
-                    </svg>
-                </span>
-                <input type="file" autocomplete="no">
-                <span aria-label="Account Circle icon" role="img"
-                    class="material-design-icon account-circle-icon img">
-                    <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24"
-                        class="material-design-icon__svg">
-                        <path
-                            d="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5C13.66,5 15,6.34 15,8C15,9.66 13.66,11 12,11C10.34,11 9,9.66 9,8C9,6.34 10.34,5 12,5M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.47 17.5,2 12,2Z">
-                            <title>Account Circle icon</title>
-                        </path>
-                    </svg>
-                </span>
-            </label>
-        </div>
-        <div>
-            <div>
-                <div role="dialog" aria-hidden="true" class="modal fade" style="display: none;">
-                    <div class="modal-dialog modal-md modal-dialog-centered">
-                        <div tabindex="-1" role="document"
-                            aria-describedby="__BVID__122___BV_modal_body_" class="modal-content">
-                            <!---->
-                            <div id="__BVID__122___BV_modal_body_" class="modal-body">
-                                <!---->
-                                <div class="croppie-container"
-                                    style="position: relative; z-index: 0; height: auto;">
-                                    <div class="cr-boundary" aria-dropeffect="none"
-                                        style="width: 100%; height: 400px;"><canvas class="cr-image"
-                                            alt="preview" aria-grabbed="false"></canvas>
-                                        <div class="cr-viewport cr-vp-square" tabindex="0"
-                                            style="width: 200px; height: 200px;"></div>
-                                        <div class="cr-overlay"></div>
-                                    </div>
-                                    <div class="cr-slider-wrap"><input class="cr-slider"
-                                            type="range" step="0.0001" aria-label="zoom"
-                                            autocomplete="no"></div>
-                                </div>
-                                <div class="d-flex justify-content-center align-items-center mb-5">
-                                    <button class="btn btn-outline-blue-ml">Girar
-                                        Foto</button>
-                                </div>
-                                <div class="d-flex align-items-center"><button type="button"
-                                        class="btn btn-link mr-auto">Cancelar</button><button
-                                        type="button" class="btn btn-blue-ml">Salvar</button></div>
-                            </div>
-                            <!---->
-                        </div>
-                    </div>
-                </div>
-                <!---->
-            </div>
-        </div>
+        <livewire:curriculo.enviar-foto/>
     </div>
     <ul class="nav" id="scrollspy_curriculo">
         <li class="nav-item">
