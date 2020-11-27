@@ -26,11 +26,6 @@ class CurriculoController extends Controller
     }
     public function create()
     {
-        $curriculo = Auth::user()->curriculo;
-        if(!empty($curriculo) && $curriculo->status->is(CurriculoStatus::Completo))
-        {
-            return redirect()->route('curriculo.index');
-        }
         return view('curriculo.create');
     }
 }

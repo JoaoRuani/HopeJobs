@@ -22,6 +22,7 @@ class CreateExperienciasTable extends Migration
             $table->string('area')->nullable(); // RH, TI...
             $table->date('inicio');
             $table->date('saida')->nullable();
+            $table->boolean('ehAtual');
             $table->foreignId('curriculo_id')->constrained();
             $table->timestamps();
 

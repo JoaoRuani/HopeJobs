@@ -2,9 +2,15 @@
     <label for="status">
         <span>*</span> Status
     </label>
-    <select id="status" class="form-control" name="status" >
-        <option value="Cursando">Cursando</option>
-        <option value="Trancado">Trancado</option>
-        <option value="Concluído">Concluído</option>
+    <select id="status" class="form-control @error("formacoes.{$key}.status")is-invalid @enderror"
+            wire:key="formacao_{{$key}}" wire:model="formacoes.{{$key}}.status" >
+        @foreach(\App\Enums\Curriculo\StatusFormacao::asSelectArray() as $value => $description)
+            <option value="{{$value}}">{{$description}}</option>
+        @endforeach
     </select>
+    @error("formacoes.{$key}.status")
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
+    @enderror
 </div>

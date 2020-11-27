@@ -1,8 +1,9 @@
 <div {{ $attributes->merge(['class' => 'form-group'])}}">
-    <label for="nivel">
+    <label for="nivel-experiencia">
         <span>*</span> Nível
     </label>
-    <select id="nivel" class="form-control select2" name="nivel" >
+    <select id="nivel-experiencia" class="form-control select2 @error("formacoes.{$key}.nivel")is-invalid @enderror"
+            wire:key="experiencia_{{$key}}" wire:model.lazy="experiencias.{{$key}}.nivel" >
         <option value="assistente">Assistente</option>
         <option value="atendente">Atendente</option>
         <option value="autônomo">Autônomo</option>
@@ -24,4 +25,9 @@
         <option value="trainne">Trainee</option>
         <option value="voluntário">Voluntário</option>
     </select>
+    @error("experiencias.{$key}.nivel")
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
+    @enderror
 </div>
