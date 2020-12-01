@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CurriculoController;
+use App\Http\Controllers\Empresarial\VagasController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,5 +28,8 @@ Route::middleware('auth')->name('curriculo.')->group(function() {
 });
 
 Auth::routes();
-
+Route::name('vagas.')->prefix('vagas')->group(function() {
+    Route::get('/', [VagasController::class, 'index'])->name('index');
+});
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
