@@ -66,8 +66,22 @@
                 </div>
             </div>
         </nav>
-
+        @if(session()->has('error'))
+            <div role="alert" style="position: absolute; top: 40px; right: 20px; min-width: 120px; z-index: 999" aria-live="assertive" aria-atomic="true" class="toast bg-danger text-white" data-autohide="true" data-animation="true" data-delay="3000">
+                <div class="toast-body">
+                    {{session()->get('error')}}
+                </div>
+            </div>
+        @endif
+        @if(session()->has('success'))
+            <div role="alert" style="position: absolute; top: 40px; right: 20px; min-width: 120px; z-index: 999" aria-live="assertive" aria-atomic="true" class="toast bg-success text-white" data-autohide="true" data-animation="true" data-delay="3000">
+                <div class="toast-body">
+                    {{session()->get('success')}}
+                </div>
+            </div>
+        @endif
         <main class="py-4">
+
             @yield('content')
         </main>
     </div>
@@ -75,6 +89,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+    <script>
+        $('.toast').toast('show');
+    </script>
     @yield('javascripts')
 </body>
 </html>

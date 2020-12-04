@@ -21,15 +21,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth')->name('curriculo.')->group(function() {
-    Route::get('/curriculo', [CurriculoController::class, 'index'])->name('index');
-    Route::get('/curriculo/create', [CurriculoController::class, 'create'])->name('create');
-    Route::post('/curriculo/store', [CurriculoController::class, 'store'])->name('store');
+Route::middleware('auth')->group(function() {
+    Route::prefix('curriculo')->name('curriculo.')->group(function() {
+        Route::get('/', [CurriculoController::class, 'index'])->name('index');
+        Route::get('/create', [CurriculoController::class, 'create'])->name('create');
+        Route::post('/store', [CurriculoController::class, 'store'])->name('store');
+    });
 });
 
 Auth::routes();
 Route::name('vagas.')->prefix('vagas')->group(function() {
     Route::get('/', [VagasController::class, 'index'])->name('index');
+
+    Route::middleware('auth')->group(function() {
+        Route::post('aplicar/{vaga_id}', [VagasController::class, 'aplicar'])->name('aplicar');
+    });
 });
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
