@@ -22,8 +22,7 @@ class VagasController extends Controller
             $user = Auth::user();
             return view('vagas.index', ['vagas' => $vagas, 'candidaturas' => $user ? $user->candidaturas : new Collection()]);
         }
-        Session::put('error', 'Não foi possível buscar as vagas, tente novamente mais tarde!');
-        return redirect()->back();
+        return redirect()->back()->with('error', 'Não foi possível buscar as vagas, tente novamente mais tarde!');
     }
     public function aplicar(int $vaga_id)
     {

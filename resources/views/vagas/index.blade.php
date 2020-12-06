@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card-deck">
         @foreach($vagas as $vaga)
-            <div class="card flex-fill">
+            <div class="card flex-fill mb-3">
                 <div class="card-header d-flex align-items-center">
                     <div>
                         <img class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover;" src="{{$vaga['company']['logo']}}" alt="{{$vaga['company']['name']}}">
